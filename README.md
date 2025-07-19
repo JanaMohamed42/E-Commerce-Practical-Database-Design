@@ -1,15 +1,63 @@
-# E-Commerce SQL Project
+# 🛍️ E-Commerce Practical Database Design
 
-This project includes SQL scripts for working with an e-commerce database.
+Welcome! This repository contains a set of SQL scripts used to build and manage a simple e-commerce database.  
+It covers everything from schema creation to advanced queries, reporting, triggers, and transactions.
 
-## 📄 Files
+---
 
-- [createtables.sql](createtables.sql): Creates the database tables.
-- [dailyrevenue.sql](dailyrevenue.sql): Shows daily total revenue.
-- [topsellingproducts.sql](topsellingproducts.sql): Lists top-selling products from last month.
-- [highvaluecustomers.sql](highvaluecustomers.sql): Lists customers who spent more than $500 last month.
-- [searchcamera.sql](searchcamera.sql): Searches for products with “camera” in name or description.
-- [triggersalehistory.sql](triggersalehistory.sql): Trigger to save sale history on new order.
-- [lockquantity.sql](lockquantity.sql): Locks quantity field for product ID 211.
-- [lockrow.sql](lockrow.sql): Locks row of product ID 211 to prevent updates.
+## 📂 SQL Scripts Collection
+
+### 🧱 Create Tables  
+🔗 [`createtables.sql`](createtables.sql)  
+Creates the full schema: `customers`, `products`, `orders`, `order_details`, and `categories`.
+
+---
+
+### 📊 Daily Revenue Report  
+🔗 [`dailyrevenue.sql`](dailyrevenue.sql)  
+Generates a summary of total daily revenue — auto-calculated based on today's date.
+
+---
+
+### 📈 Top-Selling Products (Last Month)  
+🔗 [`topsellingproducts.sql`](topsellingproducts.sql)  
+Retrieves best-selling products from the previous month based on sales count.
+
+---
+
+### 💰 High-Value Customers (>$500 last month)  
+🔗 [`highvaluecustomers.sql`](highvaluecustomers.sql)  
+Finds customers whose total purchases exceeded $500 in the past month.
+
+---
+
+### 🔍 Search Products with "Camera"  
+🔗 [`searchcamera.sql`](searchcamera.sql)  
+Searches for all products that contain the word "camera" in their name or description.
+
+---
+
+### 🎯 Product Recommendations (Same Category & Author)  
+🔗 [`productrecommendations.sql`](productrecommendations.sql)  
+Suggests popular products within the same category/author, excluding already purchased items.
+
+---
+
+### 🔁 Trigger: Sale History Logging  
+🔗 [`triggersalehistory.sql`](triggersalehistory.sql)  
+Automatically logs sales history after each new order using a database trigger.
+
+---
+
+### 🔒 Lock Quantity Field (Product ID: 211)  
+🔗 [`lockquantity.sql`](lockquantity.sql)  
+Prevents changes to the quantity field of a specific product using transaction locking.
+
+---
+
+### 🔐 Lock Product Row (Product ID: 211)  
+🔗 [`lockrow.sql`](lockrow.sql)  
+Locks a specific row from being updated during a transaction.
+
+
 
