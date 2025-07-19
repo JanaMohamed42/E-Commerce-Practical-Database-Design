@@ -62,7 +62,7 @@ Locks a specific row from being updated during a transaction.
 
 
 
-###📉 Trigger to Automatically Update Product Stock After a New Order  
+### 📉 Trigger to Automatically Update Product Stock After a New Order  
 Updates the product stock quantity whenever a new order is inserted into the `orderdetails` table.
 
 [🔗 View Trigger Code](./update_product_stock.sql)
