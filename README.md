@@ -60,4 +60,9 @@ Prevents changes to the quantity field of a specific product using transaction l
 Locks a specific row from being updated during a transaction.
 
 
+## Trigger to Automatically Update Product Stock After a New Order
+[View SQL File](./update_product_stock.sql)
+
+## Trigger to Prevent Orders with Insufficient Stock
+[View SQL File](./check_stock_quantity.sql)
 
