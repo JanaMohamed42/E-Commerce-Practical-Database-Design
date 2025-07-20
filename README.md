@@ -5,6 +5,13 @@ It covers everything from schema creation to advanced queries, reporting, trigge
 
 ---
 
+## 📊 ERD Diagram
+
+![ERD](https://github.com/JanaMohamed42/E-Commerce-Practical-Database-Design/blob/main/ERD%20DB.png)
+
+
+
+
 ## 📂 SQL Scripts Collection
 
 ### 🧱 Create Tables  
