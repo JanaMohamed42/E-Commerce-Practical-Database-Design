@@ -5,6 +5,13 @@ It covers everything from schema creation to advanced queries, reporting, trigge
 
 ---
 
+## 📊 ERD Diagram
+
+![ERD]()
+
+
+
+
 ## 📂 SQL Scripts Collection
 
 ### 🧱 Create Tables  
