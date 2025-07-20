@@ -70,8 +70,9 @@ Searches for all products that contain the word "camera" in their name or descri
 ---
 
 ### 🎯 Product Recommendations (Same Category & Author)  
-🔗 [`productrecommendations.sql`](productrecommendations.sql)  
-Suggests popular products within the same category/author, excluding already purchased items.
+Recommends other products in the same category as previously purchased items by the customer, excluding already purchased products.
+🔗 [View Code](./related_product_recommendations.sql)
+
 
 ---
 
