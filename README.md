@@ -9,6 +9,31 @@ It covers everything from schema creation to advanced queries, reporting, trigge
 
 ![ERD]()
 
+## 🧱 Main Entities in the Database
+
+- **Customer**: Stores customer personal data (name, email, address, etc.)
+- **Category**: Groups products under specific categories (e.g. Electronics, Clothing)
+- **Product**: Represents items available for sale
+- **Order**: Represents a customer's order (date, total amount, etc.)
+- **Order_Details**: Line items of each order (what products were bought, quantity, price)
+
+## 🔗 Updated Relationships Between Entities
+
+- **Category → Product**  
+  📘 Relationship: **One-to-Many (1:M)**  
+  ➤ One category can have many products.
+
+- **Customer → Order**  
+  📘 Relationship: **One-to-Many (1:M)**  
+  ➤ One customer can place many orders.
+
+- **Order → Order_Details**  
+  📘 Relationship: **One-to-Many (1:M)**  
+  ➤ Each order has multiple order details.
+
+- **Product → Order_Details**  
+  📘 Relationship: **One-to-Many (1:M)**  
+  ➤ One product can appear in many order detail entries.
 
 
 
