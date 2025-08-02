@@ -114,25 +114,10 @@ Prevents inserting a new order into the `orderdetails` table if the requested qu
 
 
 
-
-تمام، هغير كل **Indexes Added** إلى **Optimization Technique**، وهغير **Execution Times** بحيث تكون:
-
-```
-Execution Before Optimization:  
-Execution After Optimization:
-```
-
-وده النسخة المعدلة بالكامل:
-
----
-
 ````markdown
 # SQL Queries Optimization Test  
 
-This document summarizes the **SQL queries**, their **execution times before and after optimization**, and the **optimization techniques applied** to improve performance.  
-Tables used: **Category, Product, Customer, Orders, Order_Details**  
 
----
 
 ## ✅ Query 1: Fetch Latest 100 High-Value Product Orders  
 **Description:** Fetches the latest 100 orders of products priced above 500, including order details and product names, ordered by order date.  
@@ -153,6 +138,7 @@ LIMIT 100;
 ````
 
 **Execution Before Optimization:** `100.844 sec`
+
 **Execution After Optimization:** `0.047 sec`
 
 **Optimization Technique:**
@@ -180,6 +166,7 @@ LIMIT 1;
 ```
 
 **Execution Before Optimization:** `13.312 sec`
+
 **Execution After Optimization:** `0.719 sec`
 
 **Optimization Technique:**
