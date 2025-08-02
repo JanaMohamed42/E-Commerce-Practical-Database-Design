@@ -114,12 +114,12 @@ Prevents inserting a new order into the `orderdetails` table if the requested qu
 
 
 
-````markdown
 # SQL Queries Optimization Test  
 
----
 
-## ✅ Query 1: Fetch Latest 100 High-Value Product Orders  
+
+## ✅ Query 1: Fetch Latest 100 High-Value Product Orders
+
 **Description:** Fetches the latest 100 orders of products priced above 500, including order details and product names, ordered by order date.  
 
 ```sql
