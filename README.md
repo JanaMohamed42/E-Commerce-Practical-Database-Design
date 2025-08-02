@@ -117,7 +117,7 @@ Prevents inserting a new order into the `orderdetails` table if the requested qu
 ````markdown
 # SQL Queries Optimization Test  
 
-
+---
 
 ## ✅ Query 1: Fetch Latest 100 High-Value Product Orders  
 **Description:** Fetches the latest 100 orders of products priced above 500, including order details and product names, ordered by order date.  
@@ -209,24 +209,9 @@ CREATE INDEX idx_product_categoryid_productname ON Product(category_id, product_
 
 ---
 
-## ✅ Query 4: Display Current Database Processes
 
-**Description:** Displays the current processes running on the database.
 
-```sql
-SHOW PROCESSLIST;
-```
-
-**Execution Before Optimization:** Not applicable
-**Execution After Optimization:** Not applicable
-
-**Optimization Technique:**
-
-* None
-
----
-
-## ✅ Query 5: Search Top 50 Laptops by Price
+## ✅ Query 4: Search Top 50 Laptops by Price
 
 **Description:** Retrieves products with "Laptop" in their name, ordered by price, limited to 50 results.
 
@@ -251,7 +236,7 @@ CREATE INDEX idx_product_name_price_cover ON Product(product_name, price, produc
 
 ---
 
-## ✅ Query 6: Aggregate Top 100 Customer Spending
+## ✅ Query 5: Aggregate Top 100 Customer Spending
 
 **Description:** Aggregates total spending by customers, joining orders and customer data, ordered by total spent, limited to 100.
 
@@ -278,7 +263,7 @@ CREATE INDEX idx_orders_customer_id_total_amount ON Orders(customer_id, total_am
 
 ---
 
-## ✅ Query 7: Count Products per Category
+## ✅ Query 6: Count Products per Category
 
 **Description:** Counts the number of products per category, including categories with no products, ordered by product count.
 
@@ -304,7 +289,7 @@ CREATE INDEX idx_product_categoryid_productid ON Product(category_id, product_id
 
 ---
 
-## ✅ Query 8: Find Top 10 Sold Products in June 2025
+## ✅ Query 7: Find Top 10 Sold Products in June 2025
 
 **Description:** Aggregates total quantity sold per product for orders in June 2025, limited to top 10.
 
@@ -336,7 +321,7 @@ CREATE INDEX idx_orders_order_date_order_id ON Orders(order_date, order_id);
 
 ---
 
-## ✅ Query 9: Calculate Revenue for June 12, 2025
+## ✅ Query 8: Calculate Revenue for June 12, 2025
 
 **Description:** Calculates total revenue for orders on June 12, 2025, by joining orders and order details.
 
@@ -363,7 +348,7 @@ CREATE INDEX idx_orderdetails_orderid_qty_price ON Order_Details(order_id, quant
 
 ---
 
-## ✅ Query 10: Aggregate Revenue and Quantity by Category
+## ✅ Query 9: Aggregate Revenue and Quantity by Category
 
 **Description:** Aggregates total quantity and revenue per product category, joining categories, products, and order details.
 
@@ -390,7 +375,7 @@ CREATE INDEX idx_product_categoryid_productid ON Product(category_id, product_id
 
 ---
 
-## ✅ Query 11: List Low Stock Products
+## ✅ Query 10: List Low Stock Products
 
 **Description:** Retrieves products with stock quantity ≤ 10, ordered by stock quantity.
 
