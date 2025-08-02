@@ -198,6 +198,7 @@ LIMIT 50;
 ```
 
 **Execution Before Optimization:** `525.25 sec`
+
 **Execution After Optimization:** `27.062 sec`
 
 **Optimization Technique:**
@@ -225,6 +226,7 @@ LIMIT 50;
 ```
 
 **Execution Before Optimization:** `95.718 sec`
+
 **Execution After Optimization:** `25.547 sec`
 
 **Optimization Technique:**
@@ -253,6 +255,7 @@ LIMIT 100;
 ```
 
 **Execution Before Optimization:** `163.312 sec`
+
 **Execution After Optimization:** `10.032 sec`
 
 **Optimization Technique:**
@@ -279,6 +282,7 @@ ORDER BY totalitems DESC;
 ```
 
 **Execution Before Optimization:** `36.386 sec`
+
 **Execution After Optimization:** `1.500 sec`
 
 **Optimization Technique:**
@@ -310,6 +314,7 @@ LIMIT 10;
 ```
 
 **Execution Before Optimization:** `109.516 sec`
+
 **Execution After Optimization:** `92.203 sec`
 
 **Optimization Technique:**
@@ -338,6 +343,7 @@ GROUP BY o.order_date;
 ```
 
 **Execution Before Optimization:** `5.875 sec`
+
 **Execution After Optimization:** `1.313 sec`
 
 **Optimization Technique:**
@@ -365,6 +371,7 @@ ORDER BY total_revenue DESC;
 ```
 
 **Execution Before Optimization:** `363.781 sec`
+
 **Execution After Optimization:** `143.734 sec`
 
 **Optimization Technique:**
@@ -387,6 +394,7 @@ ORDER BY stock_quantity ASC;
 ```
 
 **Execution Before Optimization:** `1.016 sec`
+
 **Execution After Optimization:** `0.031 sec`
 
 **Optimization Technique:**
