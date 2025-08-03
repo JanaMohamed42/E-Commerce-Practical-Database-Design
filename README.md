@@ -116,6 +116,14 @@ Prevents inserting a new order into the `orderdetails` table if the requested qu
 
 # SQL Queries Optimization Test  
 
+The performance optimization tests were executed on a **large-scale e-commerce database** with the following data distribution:
+- **Customers:** 2,000,000  
+- **Products:** 600,000  
+- **Categories:** 100  
+- **Orders:** 1,500,000  
+- **Order Details (SaleDetails):** Approximately **37.5 million rows on average**  
+
+The significant size of the **Order Details** table is due to the **one-to-many relationship between Orders and Order Details**, where each order can contain up to **50 products**. This relationship introduces complexity during **JOIN operations and aggregations**, making query optimization critical for achieving acceptable performance.
 
 
 ## ✅ Query 1: Fetch Latest 100 High-Value Product Orders
