@@ -1,15 +1,16 @@
-# 🛍️ E-Commerce Practical Database Design
+#  E-Commerce Practical Database Design
 
 Welcome! This repository contains a set of SQL scripts used to build and manage a simple e-commerce database.  
 It covers everything from schema creation to advanced queries, reporting, triggers, and transactions.
 
 ---
 
-## 📊 ERD Diagram
+##  ERD Diagram
 
-![ERD](https://github.com/JanaMohamed42/E-Commerce-Practical-Database-Design/blob/main/ERD%20DB%20.png)
+<img width="679" height="501" alt="Product-ERD-V1" src="https://github.com/user-attachments/assets/2ceb4596-60ab-4b18-a4b8-b253983e78ac" />
 
-## 🧱 Main Entities in the Database
+
+##  Main Entities in the Database
 
 - **Customer**: Stores customer personal data (name, email, address, etc.)
 - **Category**: Groups products under specific categories (e.g. Electronics, Clothing)
@@ -17,85 +18,85 @@ It covers everything from schema creation to advanced queries, reporting, trigge
 - **Order**: Represents a customer's order (date, total amount, etc.)
 - **Order_Details**: Line items of each order (what products were bought, quantity, price)
 
-## 🔗 Updated Relationships Between Entities
+##  Updated Relationships Between Entities
 
 - **Category → Product**  
-  📘 Relationship: **One-to-Many (1:M)**  
+   Relationship: **One-to-Many (1:M)**  
   ➤ One category can have many products.
 
 - **Customer → Order**  
-  📘 Relationship: **One-to-Many (1:M)**  
+   Relationship: **One-to-Many (1:M)**  
   ➤ One customer can place many orders.
 
 - **Order → Order_Details**  
-  📘 Relationship: **One-to-Many (1:M)**  
+   Relationship: **One-to-Many (1:M)**  
   ➤ Each order has multiple order details.
 
 - **Product → Order_Details**  
-  📘 Relationship: **One-to-Many (1:M)**  
+   Relationship: **One-to-Many (1:M)**  
   ➤ One product can appear in many order detail entries.
 
 
 
-## 📂 SQL Scripts Collection
+##  SQL Scripts Collection
 
-### 🧱 Create Tables  
+###  Create Tables  
 🔗 [`createtables.sql`](createtables.sql)  
 Creates the full schema: `customers`, `products`, `orders`, `order_details`, and `categories`.
 
 ---
 
-### 📊 Daily Revenue Report  
+###  Daily Revenue Report  
 🔗 [`dailyrevenue.sql`](dailyrevenue.sql)  
 Generates a summary of total daily revenue — auto-calculated based on today's date.
 
 ---
 
-### 📈 Top-Selling Products (Last Month)  
+###  Top-Selling Products (Last Month)  
 🔗 [`topsellingproducts.sql`](topsellingproducts.sql)  
 Retrieves best-selling products from the previous month based on sales count.
 
 ---
 
-### 💰 High-Value Customers (>$500 last month)  
+###  High-Value Customers (>$500 last month)  
 🔗 [`highvaluecustomers.sql`](highvaluecustomers.sql)  
 Finds customers whose total purchases exceeded $500 in the past month.
 
 ---
 
-### 🔍 Search Products with "Camera"  
+###  Search Products with "Camera"  
 🔗 [`searchcamera.sql`](searchcamera.sql)  
 Searches for all products that contain the word "camera" in their name or description.
 
 ---
 
-### 🎯 Product Recommendations (Same Category & Author)  
+###  Product Recommendations (Same Category & Author)  
 Recommends other products in the same category as previously purchased items by the customer, excluding already purchased products.
 🔗 [View Code](./related_product_recommendations.sql)
 
 
 ---
 
-### 🔁 Trigger: Sale History Logging  
+###  Trigger: Sale History Logging  
 🔗 [`triggersalehistory.sql`](triggersalehistory.sql)  
 Automatically logs sales history after each new order using a database trigger.
 
 ---
 
-### 🔒 Lock Quantity Field (Product ID: 211)  
+###  Lock Quantity Field (Product ID: 211)  
 🔗 [`lockquantity.sql`](lockquantity.sql)  
 Prevents changes to the quantity field of a specific product using transaction locking.
 
 ---
 
-### 🔐 Lock Product Row (Product ID: 211)  
+###  Lock Product Row (Product ID: 211)  
 🔗 [`lockrow.sql`](lockrow.sql)  
 Locks a specific row from being updated during a transaction.
 
 
 
 
-### 📉 Trigger to Automatically Update Product Stock After a New Order  
+###  Trigger to Automatically Update Product Stock After a New Order  
 Updates the product stock quantity whenever a new order is inserted into the `orderdetails` table.
 
 [🔗 View Trigger Code](./update_product_stock.sql)
@@ -105,7 +106,7 @@ Updates the product stock quantity whenever a new order is inserted into the `or
 
 ---
 
-### 🚫 Trigger to Prevent Orders with Insufficient Stock  
+###  Trigger to Prevent Orders with Insufficient Stock  
 Prevents inserting a new order into the `orderdetails` table if the requested quantity exceeds available stock.
 
 [🔗 View Trigger Code](./check_stock_quantity.sql)
@@ -126,7 +127,7 @@ The performance optimization tests were executed on a **large-scale e-commerce d
 The significant size of the **Order Details** table is due to the **one-to-many relationship between Orders and Order Details**, where each order can contain up to **50 products**. This relationship introduces complexity during **JOIN operations and aggregations**, making query optimization critical for achieving acceptable performance.
 
 
-## ✅ Query 1: Fetch Latest 100 High-Value Product Orders
+##  Query 1: Fetch Latest 100 High-Value Product Orders
 
 **Description:** Fetches the latest 100 orders of products priced above 500, including order details and product names, ordered by order date.  
 
@@ -158,7 +159,7 @@ CREATE INDEX idx_orderdetails_orderid_productid ON Order_Details(order_id, produ
 
 ---
 
-## ✅ Query 2: Identify Day with Highest Revenue
+##  Query 2: Identify Day with Highest Revenue
 
 **Description:** Identifies the day with the highest total revenue by aggregating orders and total amount, limited to one result.
 
@@ -185,7 +186,7 @@ CREATE INDEX idx_orders_order_date_total_amount ON Orders(order_date, total_amou
 
 ---
 
-## ✅ Query 3: Calculate Top 50 Revenue by Product Category
+##  Query 3: Calculate Top 50 Revenue by Product Category
 
 **Description:** Calculates total revenue per product category, joining aggregated order details with products and categories, limited to top 50.
 
@@ -220,7 +221,7 @@ CREATE INDEX idx_product_categoryid_productname ON Product(category_id, product_
 
 
 
-## ✅ Query 4: Search Top 50 Laptops by Price
+##  Query 4: Search Top 50 Laptops by Price
 
 **Description:** Retrieves products with "Laptop" in their name, ordered by price, limited to 50 results.
 
@@ -246,7 +247,7 @@ CREATE INDEX idx_product_name_price_cover ON Product(product_name, price, produc
 
 ---
 
-## ✅ Query 5: Aggregate Top 100 Customer Spending
+##  Query 5: Aggregate Top 100 Customer Spending
 
 **Description:** Aggregates total spending by customers, joining orders and customer data, ordered by total spent, limited to 100.
 
@@ -274,7 +275,7 @@ CREATE INDEX idx_orders_customer_id_total_amount ON Orders(customer_id, total_am
 
 ---
 
-## ✅ Query 6: Count Products per Category
+##  Query 6: Count Products per Category
 
 **Description:** Counts the number of products per category, including categories with no products, ordered by product count.
 
@@ -301,7 +302,7 @@ CREATE INDEX idx_product_categoryid_productid ON Product(category_id, product_id
 
 ---
 
-## ✅ Query 7: Find Top 10 Sold Products in June 2025
+##  Query 7: Find Top 10 Sold Products in June 2025
 
 **Description:** Aggregates total quantity sold per product for orders in June 2025, limited to top 10.
 
@@ -334,7 +335,7 @@ CREATE INDEX idx_orders_order_date_order_id ON Orders(order_date, order_id);
 
 ---
 
-## ✅ Query 8: Calculate Revenue for June 12, 2025
+##  Query 8: Calculate Revenue for June 12, 2025
 
 **Description:** Calculates total revenue for orders on June 12, 2025, by joining orders and order details.
 
@@ -362,7 +363,7 @@ CREATE INDEX idx_orderdetails_orderid_qty_price ON Order_Details(order_id, quant
 
 ---
 
-## ✅ Query 9: Aggregate Revenue and Quantity by Category
+##  Query 9: Aggregate Revenue and Quantity by Category
 
 **Description:** Aggregates total quantity and revenue per product category, joining categories, products, and order details.
 
@@ -390,7 +391,7 @@ CREATE INDEX idx_product_categoryid_productid ON Product(category_id, product_id
 
 ---
 
-## ✅ Query 10: List Low Stock Products
+##  Query 10: List Low Stock Products
 
 **Description:** Retrieves products with stock quantity ≤ 10, ordered by stock quantity.
 
@@ -413,8 +414,44 @@ CREATE INDEX idx_product_stock ON Product(stock_quantity);
 
 ---
 
-## 📊 Optimization Summary
-
+## Optimization Summary
 ![Optimization](https://github.com/JanaMohamed42/E-Commerce-Practical-Database-Design/blob/main/optimization.png)
 
 
+ ##  Denormalized version for customer and orders for improving the performance
+
+### Creation Script & Insertion Script
+
+```sql
+CREATE TABLE Customer_Order_Denormalized
+(
+    Order_Detail_Id INTEGER PRIMARY KEY AUTO_INCREMENT,
+    Customer_Id INTEGER,
+    First_Name VARCHAR(20) NOT NULL,
+    Last_Name VARCHAR(20) NOT NULL,
+    Order_Id INTEGER,
+    order_date DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+    Product_Id INTEGER,
+    Product_Name VARCHAR(50) NOT NULL,
+    Quantity INTEGER NOT NULL DEFAULT 0 CHECK (Quantity BETWEEN 0 AND 2000),
+    Unit_Price NUMERIC(6,2) DEFAULT 0 NOT NULL CHECK (Unit_Price >= 0),
+    Product_Total NUMERIC(10,2) NOT NULL
+);
+
+INSERT INTO Customer_Order_Denormalized (Customer_Id, First_Name, Last_Name, Order_Id, order_date, Product_Id, Product_Name, Quantity, Unit_Price, Product_Total)
+SELECT 
+    C.Customer_Id,
+    C.First_Name,
+    C.Last_Name,
+    O.Order_Id,
+    O.Order_Date,
+    P.Product_Id,
+    P.Name,
+    OD.Quantity,
+    OD.Unit_Price,
+    (OD.Quantity * OD.Unit_Price) AS Product_Total
+FROM Customer C
+JOIN Orders O ON C.Customer_Id = O.Customer_Id
+JOIN Order_Details OD ON O.Order_Id = OD.Order_Id
+JOIN Product P ON OD.Product_Id = P.Product_Id;
+```
