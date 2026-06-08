@@ -414,7 +414,7 @@ CREATE INDEX idx_product_stock ON Product(stock_quantity);
 
 ---
 
-## 📊 Optimization Summary
+## Optimization Summary
 
 ![Optimization](https://github.com/JanaMohamed42/E-Commerce-Practical-Database-Design/blob/main/optimization.png)
 
