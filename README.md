@@ -1,6 +1,6 @@
 #  E-Commerce Practical Database Design
 
-Welcome! This repository contains a set of SQL scripts used to build and manage a simple e-commerce database.  
+ This repository contains a set of SQL scripts used to build and manage a simple e-commerce database.  
 It covers everything from schema creation to advanced queries, reporting, triggers, and transactions.
 
 ---
