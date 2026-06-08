@@ -7,7 +7,8 @@ It covers everything from schema creation to advanced queries, reporting, trigge
 
 ## 📊 ERD Diagram
 
-![ERD](https://github.com/JanaMohamed42/E-Commerce-Practical-Database-Design/blob/main/ERD%20DB%20.png)
+<img width="679" height="501" alt="Product-ERD-V1" src="https://github.com/user-attachments/assets/2ceb4596-60ab-4b18-a4b8-b253983e78ac" />
+
 
 ## 🧱 Main Entities in the Database
 
